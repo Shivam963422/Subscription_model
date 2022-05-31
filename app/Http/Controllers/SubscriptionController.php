@@ -34,7 +34,7 @@ class SubscriptionController extends Controller
       $validator = Validator::make(
                         $request->all(), [
 
-                    'email' => 'required|email',
+                    'email' => 'required|email|unique:subscribed_emails',
                     
                         ]
         );
