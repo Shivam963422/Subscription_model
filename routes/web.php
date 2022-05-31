@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\SubscriptionController;
+Route::get('/subscription-form', [SubscriptionController::class, 'index']);
+Route::post('/subscription-form', [SubscriptionController::class, 'save'])->name('subscription-form.store');
+
+Route::get('/admin-post-form', [SubscriptionController::class, 'adminPostFormIndex']);
+Route::post('/admin-post-form', [SubscriptionController::class, 'sendEmailToSubscribers'])->name('admin-post-form.store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

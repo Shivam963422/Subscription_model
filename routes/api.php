@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('subscription_data', 'App\Http\Controllers\SubscriptionController@store');
+ // Route::post('subscription_data', 'App\Http\Controllers\SubscriptionController@sendEmailToSubscribers');
